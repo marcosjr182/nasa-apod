@@ -12,8 +12,8 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/featured/:date" component={FeaturedPage} />
-        <Route exact path="/featured" component={FeaturedPage} />
+        <Route exact={true} path="/featured/:date" component={FeaturedPage} />
+        <Route exact={true} path="/featured" component={FeaturedPage} />
         <Route path="*">
           <Redirect to="/featured" />
         </Route>
