@@ -1,5 +1,5 @@
 import { default as React, useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import * as dateHelpers from '../../helpers/date'
 import FeaturedControls from './FeaturedControls';
 import nasaService from '../../services/nasa';
@@ -23,17 +23,18 @@ function FeaturedPage() {
     nasaService.fetchAPOD(stringDate)
       .then((data: Picture) => setPicture(data))
       .catch((err) => setError(err))
-  }, [date]);
+  }, [stringDate]);
 
   if (!picture && !error) {
     return <Loading />
   }
 
   return (
-
-    <div className="container">
-      <FeaturedPicture picture={picture} />
-      <FeaturedControls date={targetDate} />
+    <div className="container my-3 mx-auto">
+      <div className="d-flex flex-column flex-end">
+        <FeaturedPicture picture={picture} />
+        <FeaturedControls date={targetDate} />
+      </div>
     </div>
   );
 }

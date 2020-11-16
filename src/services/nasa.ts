@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosPromise, AxiosResponse, AxiosStatic } from 'axios';
+import axios from 'axios';
 import { Picture } from '../interfaces/Picture';
 
 // TODO: Move api_key to .env
@@ -14,7 +14,8 @@ function fetchAPOD(date: string): Promise<Picture> {
     .then((res) => res.data);
 }
 
-export default {
+const NasaService = {
   fetchAPOD
 }
 
+export default NasaService;

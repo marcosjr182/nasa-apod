@@ -11,21 +11,18 @@ const FeaturedPicture: FunctionComponent<FeaturedPictureProps> = ({ picture }) =
   const { url, title, explanation } = picture;
 
   return (
-    <div className="d-flex flex-column h-100 align-items-end">
-      <header className="masthead mb-auto">
-        <div className="inner">
-          <h3 className="masthead-brand">{title}</h3>
-        </div>
-      </header>
-
-      <img width="50%" height="50%" src={url} alt="Nasa's APOD" />
+    <React.Fragment>
+      <div className="col-12 text-center">
+        <img className="align-center" height="600" src={url} alt="Nasa's APOD" />
+      </div>
 
       <footer className="mastfoot mt-auto">
+        <h3 className="masthead-brand">{title}</h3>
         <div className="inner">
           <p>{explanation}</p>
         </div>
       </footer>
-    </div>
+    </React.Fragment>
   );
 }
 
