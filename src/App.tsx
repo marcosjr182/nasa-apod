@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,7 +8,7 @@ import {
 
 import FeaturedPage from './pages/FeaturedPage';
 
-function App() {
+const App: FunctionComponent = () => {
   return (
     <Router>
       <Switch>
