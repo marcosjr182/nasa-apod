@@ -17,7 +17,7 @@ const FeaturedPicture: FunctionComponent<FeaturedPictureProps> = ({ picture }) =
         <img className="align-center" height="600" src={url} alt="Nasa's APOD" />
       </div>
 
-      <footer className="mastfoot mt-auto">
+      <footer className="my-4">
         <h3 className="masthead-brand">{title}</h3>
         <div className="inner">
           <p>{explanation}</p>

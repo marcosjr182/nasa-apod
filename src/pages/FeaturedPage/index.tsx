@@ -5,10 +5,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as dateHelpers from '../../helpers/date'
 import nasaService from '../../services/nasa';
 import { Picture } from '../../interfaces/Picture';
+import Card from '../../components/Card';
+import { changePictureAction } from '../../store/featured';
+import { RootState } from '../../store';
+
 import FeaturedControls from './FeaturedControls';
 import FeaturedPicture from './FeaturedPicture';
-import { changeDateAction, changePictureAction } from '../../store/featured';
-import { RootState } from '../../store';
 
 interface FeaturedPageParams {
   date: string | undefined
@@ -35,10 +37,10 @@ function FeaturedPage() {
 
   return (
     <div className="container my-3 mx-auto">
-      <div className="d-flex flex-column flex-end">
+      <Card>
         <FeaturedPicture picture={picture} />
         <FeaturedControls date={targetDate} />
-      </div>
+      </Card>
     </div>
   );
 }
