@@ -1,12 +1,13 @@
 import React, { FunctionComponent } from 'react';
+import Loading from '../../components/Loading';
 import { Picture } from '../../interfaces/Picture';
 
 type FeaturedPictureProps = {
-  picture?: Picture
+  picture: Picture | null
 }
 
 const FeaturedPicture: FunctionComponent<FeaturedPictureProps> = ({ picture }) => {
-  if (!picture) return null;
+  if (!picture) return <Loading />;
 
   const { url, title, explanation } = picture;
 
