@@ -1,6 +1,8 @@
 import moment from 'moment';
 
-const DATE_FORMAT = 'YYYY-MM-DD';
+export const DATE_FORMAT = 'YYYY-MM-DD';
+export const TODAY = moment();
+export const MIN_DATE = TODAY.clone().subtract(2, 'year');
 
 export function parse(date?: string): moment.Moment {
   const currentDate = moment(date, DATE_FORMAT);
@@ -16,9 +18,13 @@ export function dayAfter(date: moment.Moment) {
 }
 
 export function isToday(date: moment.Moment) {
-  return moment().isSame(date, 'day');
+  return TODAY.isSame(date, 'day');
 }
 
 export function stringify(date: moment.Moment) {
   return date.format(DATE_FORMAT);
+}
+
+export function isOutsideRange(date: moment.Moment): boolean {
+  return date.isBefore(MIN_DATE) || date.isAfter(TODAY)
 }

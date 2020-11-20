@@ -1,8 +1,9 @@
 import React from  'react';
+import './Loading.css'
 
 function Loading() {
   return (
-    <div className="text-center">
+    <div className="Loading d-flex align-items-center justify-content-center text-center">
       <div className="spinner-border" role="status">
         <span className="sr-only">Loading...</span>
       </div>

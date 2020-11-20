@@ -8,7 +8,6 @@ import { Picture } from '../../interfaces/Picture';
 import Card from '../../components/Card';
 import { changePictureAction } from '../../store/featured';
 import { RootState } from '../../store';
-
 import FeaturedControls from './FeaturedControls';
 import FeaturedPicture from './FeaturedPicture';
 
